@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "53cbcd92-0632-4255-b615-e008443971d9",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39792402"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"a@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"mai\",\r\n  \"email\": \"mai@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all photo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/get-photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"get-photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search photo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sunset\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/photo/search-photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"search-photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get thông tin ảnh và người dùng tạo ảnh bằng id ảnh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get thông tin bình luận theo ảnh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check ảnh đã lưu hay chưa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 2,\r\n  \"photoId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/photo/check-save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"check-save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lưu thông tin bình luận của người dùng với ảnh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 3,\r\n  \"photoId\": 1,\r\n  \"content\": \"Bức ảnh siêu đẹp!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/photo/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get danh sách ảnh đã lưu theo user_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/user/2/saved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"user",
+						"2",
+						"saved"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get danh sách ảnh đã tạo theo user_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/user/2/created",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"user",
+						"2",
+						"created"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xoá ảnh theo id ảnh",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/photo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
